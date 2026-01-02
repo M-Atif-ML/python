@@ -1,0 +1,45 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+int main(){
+    int peshawar = 0,karnataka = 1,faislabad =2,mombai = 3,delhi = 4;
+    int mon = 0,tue =1,wed = 2,thu = 3,fri = 4,sat = 5,sun= 6;
+
+    int arr[5][7][24]= {{{},{},{},{},{},{},{}},
+                        {{},{},{},{},{},{},{}},
+                        {{},{},{},{},{},{},{}},
+                        {{},{},{},{},{},{},{}},
+                        {{},{},{},{},{},{},{}}};
+    int counter = 1;
+    for(int i  = 0 ; i<5;i++)
+        for(int j = 0 ;j<7;j++)
+            for(int k = 0;k<24;k++)
+            {
+
+                arr[i][j][k] = counter; counter++;
+            }
+                
+
+    cout<<"Array:\n";
+    for(int i  = 0 ; i<5;i++){
+        for(int j = 0 ;j<7;j++){
+            for(int k = 0;k<24;k++){
+                cout<<setw(5);
+                cout<<arr[i][j][k];
+            }
+            cout<<endl;
+
+        }
+        cout<<endl;
+    }
+    int size_D1 = sizeof(arr) / sizeof(arr[0]),
+    size_D2 = sizeof(arr[0])/ sizeof(arr[0][0]),
+    size_D3 = sizeof(arr[0][0]) / sizeof(arr[0][0][0]);
+
+    cout<<"Size of the first or outter most dimenstion is : "<<size_D1<<endl;
+    cout<<"Size of the second dimention is : "<<size_D2<<endl;
+    cout<<"Size of the third dimention is : "<<size_D3<<endl;  
+    cout<<endl<<endl;
+    cout<<"************size in terms of bytes***************"<<endl;  
+    cout<<"Size of first dimention in terms of bytes is: "<<sizeof(arr)<<endl;
+}
